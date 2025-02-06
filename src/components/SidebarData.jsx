@@ -27,11 +27,4 @@ export const SidebarData = [
   
 ]
 
-/*
-{
-        title: 'User Profile Link',
-        path: '/settings',
-        cName: 'nav-text'
 
-    },
-*/

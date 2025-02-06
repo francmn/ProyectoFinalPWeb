@@ -56,8 +56,7 @@ export const Navbar = ({title}) => {
                             <span>{item.title}</span>
                               
                             </Link>
-                        </li>
-                           
+                        </li>   
                     )
                     }
                     )
@@ -67,9 +66,8 @@ export const Navbar = ({title}) => {
 
                     <li className='nav-text'>
                     
-                        <Link to="/settings">
-                            
-                        <AiOutlineUser size='1.3em'/><span>fran.cmn</span>
+                        <Link to="/login">  
+                        <AiOutlineUser size='1.3em'/><span>Sign In</span>
                         </Link>
 
                     </li>
