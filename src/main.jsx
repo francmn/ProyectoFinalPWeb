@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-//import "./index.css"; // Archivo para estilos globales (opcional)
+import "./index.css"; // Archivo para estilos globales
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

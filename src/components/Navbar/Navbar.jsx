@@ -1,10 +1,9 @@
 import {Link, NavLink} from 'react-router-dom'
 import { AiOutlineMenu, AiOutlineLeft, AiOutlineClose, AiOutlineUser } from "react-icons/ai"
 import { useContext, useState } from 'react'
-import { SidebarData } from './SidebarData'
-import './Navbar.css'
+import { SidebarData } from '../SidebarData'
+import './styles.css'
 import { IconContext } from 'react-icons'
-import Title from './Title'
 
 export const Navbar = ({title}) => {
 
@@ -36,18 +35,8 @@ export const Navbar = ({title}) => {
             </div>
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>             
                 <ul className='nav-menu-items' onClick={showSidebar}> 
-                    <li className='navbar-toggle'>
-                        <Link to="#" className='menu-bars' >
-                            <AiOutlineClose size='1em'/>
-
-                        </Link>
-                    </li>
-                    <Link to="/home">
-                    <li className='logo'>
-                        PM
-                    </li>
-                    </Link>
-                    <hr></hr>
+                  
+                    <Link to="/home"/>
                     
                     {SidebarData.map((item, index) => { 
                     return (
@@ -62,18 +51,8 @@ export const Navbar = ({title}) => {
                     )
                     }
 
-                    <hr></hr>
-
-                    <li className='nav-text'>
-                    
-                        <Link to="/login">  
-                        <AiOutlineUser size='1.3em'/><span>Sign In</span>
-                        </Link>
-
-                    </li>
-
                 </ul> 
-            </nav>         
+            </nav>      
         </>
         </IconContext.Provider>
     )

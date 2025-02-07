@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import Login from "./pages/Login.jsx";
+import Login from "./components/Login/Login.jsx";
 import Home from "./pages/Home.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
-import ProtectedRoute from "./pages/ProtectedRoute.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Settings from "./pages/Settings.jsx"
 import Projects from "./pages/Projects.jsx"
 import Stories from "./pages/Stories.jsx"
+import "./index.css"
 
 const App = () => {
   return (
