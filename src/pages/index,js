@@ -1,6 +1,0 @@
-import Home from './Home'
-import Projects from './Projects'
-import Settings from './Settings'
-import Stories from './Stories'
-
-export {Home, Projects, Settings, Stories}

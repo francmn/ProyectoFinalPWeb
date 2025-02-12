@@ -12,15 +12,6 @@ body {
   }
   
 
-.home .my-projects .my-stories .settings{
-    display: flex;
-    height: 90hv;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: white;
-    overflow: hidden;
-}
 
 ::-webkit-scrollbar{
     width: 5px;

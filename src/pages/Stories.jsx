@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar'
 function Stories() {
   return (
     <div className='my-stories'>
-      <Navbar title='MY STORIES'/>
+      <Navbar title='MIS HISTORIAS'/>
      </div>
   )
 }

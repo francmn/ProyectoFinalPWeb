@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar/Navbar'
-import ProjectList from '../components/ProjectList'
+import ProjectList from '../components/ProjectList/ProjectList.jsx'
 
 
 
@@ -9,7 +9,7 @@ function Projects() {
 
   return (
     <div className='my-projects'>
-        <Navbar title="MY PROJECTS"/>
+        <Navbar title="MIS PROYECTOS"/>
         <div>
           <ProjectList/>
         </div>

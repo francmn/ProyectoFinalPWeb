@@ -1,0 +1,21 @@
+h1{
+    margin: 10px;
+    font-size: large;
+}
+
+.titulo{
+    font-size: 36px;
+    justify-content: left;
+    font-style: italic;
+    padding: 20px;
+
+}
+
+.datos{
+    font-style: italic;
+    padding: 20px;
+    border-style: none;
+    width:260px;
+    height: 200px;
+    color: #f39c12;
+}

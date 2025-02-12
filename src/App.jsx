@@ -2,32 +2,27 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Login from "./components/Login/Login.jsx";
-import Home from "./pages/Home.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import Settings from "./pages/Settings.jsx"
+import Dashboard from "./pages/Dashboard/Dashboard.jsx";
+import ProtectedRoute from "./services/ProtectedRoute.jsx";
+import Settings from "./pages/Settings/Settings.jsx"
 import Projects from "./pages/Projects.jsx"
 import Stories from "./pages/Stories.jsx"
 import "./index.css"
+import authService from "./services/authService.jsx";
 
 const App = () => {
+
+  const isAuthenticated = authService.isAuthenticated === "true";
+
   return (
     <Router>
       <Routes>
         {/* Rutas Públicas */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
 
         {/* Rutas Protegidas */}
         <Route
           path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />

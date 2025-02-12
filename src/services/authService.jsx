@@ -13,9 +13,15 @@ const authService = {
         password,
       });
 
-      // Si la API devuelve un token de autenticación, lo guardamos en sessionStorage
+      // Si la API devuelve un token de autenticación, lo guardamos en localStorage
       if (response.data.token) {
-        sessionStorage.setItem("authToken", response.data.token);
+        localStorage.setItem("authToken", response.data.token)
+        localStorage.setItem("username", response.data.user.username)
+        localStorage.setItem("name", response.data.user.name.first)
+        localStorage.setItem("surname", response.data.user.name.last)
+
+    
+
       }
 
       // Retorna toda la respuesta de la API (normalmente contiene el token y otros datos del usuario)
@@ -27,20 +33,33 @@ const authService = {
 
   logout: () => {
   
-    sessionStorage.removeItem("authToken");
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("username");
+  },
+
+
+  getUsername: () => {
+    return localStorage.getItem("username"); 
   },
 
   
   getCurrentUser: () => {
-    // Recupera el token almacenado en sessionStorage
-    return sessionStorage.getItem("authToken");
+    // Recupera el token almacenado en localStorage
+    return localStorage.getItem("authToken");
   },
 
   isAuthenticated: () => {
   
-    return !!sessionStorage.getItem("authToken");
+    return !!localStorage.getItem("authToken");
   },
-  
+
+  getCurrentName: () => {
+    return localStorage.getItem("name");
+  },
+  getCurrentSurname: () => {
+    return localStorage.getItem("surname");
+  }
+
 };
 
 
