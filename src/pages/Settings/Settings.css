@@ -4,18 +4,24 @@ h1{
 }
 
 .titulo{
-    font-size: 36px;
+    font-size: large;
     justify-content: left;
-    font-style: italic;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 16px;
+    color:orange;
 
 }
 
 .datos{
-    font-style: italic;
     padding: 20px;
     border-style: none;
     width:260px;
     height: 200px;
-    color: #f39c12;
+}
+
+.logout-btn{
+    display: flex;
+    justify-content: left;
+    padding-top: 16px;
+    padding-left: 16px;
 }

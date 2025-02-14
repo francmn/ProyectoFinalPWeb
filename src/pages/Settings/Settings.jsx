@@ -19,8 +19,9 @@ const Settings = () => {
     <h1>Nombre: {name}</h1>
     <h1>Apellido: {surname}</h1>
     <h1>Usuario: {username}</h1>
-    
+    <div className='logout-btn'>
     <Logout></Logout>
+    </div>
     </div>
     
     

@@ -23,11 +23,12 @@ export const Sidebar = ({ sidebar, closeSidebar }) => {
               </Link>
             </div>
           </div>
+          <hr></hr>
       <nav className='nav-menu-middle'>
         <ul className="nav-menu-items" onClick={closeSidebar}>
               
           <li className="nav-text">
-            <Link to="/home">DASHBOARD</Link>
+            <Link to="/home">HOME</Link>
           </li>
           <li className="nav-text">
             <Link to="/my-projects">MIS PROYECTOS</Link>
@@ -42,6 +43,7 @@ export const Sidebar = ({ sidebar, closeSidebar }) => {
           </li>
           </ul>
           </nav>  
+          <hr></hr>
       <div className='nav-menu-bottom'>
        <Footer/>
       </div> 

@@ -1,0 +1,53 @@
+.my-tasks-container {
+    padding: 1rem;
+  }
+  
+  .my-tasks-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+  
+  .tasks-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #1f2937;
+    color: #f3f4f6; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); / 
+  }
+  
+  .tasks-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tasks-icon {
+    font-size: 1.5rem;
+  }
+  
+  .tasks-name {
+    color: orchid;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .tasks-description {
+    font-style: italic;
+    color: whitesmoke; 
+    margin-bottom: 0.5rem;
+  }
+  
+  .tasks-details {
+    font-size: 0.875rem; 
+    color: whitesmoke;
+  }
+  
+  .tasks-details p {
+    margin: 0.25rem 0;
+  }
+
+  .tasks-title{
+    color: green;
+  }

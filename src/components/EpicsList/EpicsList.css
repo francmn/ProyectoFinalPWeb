@@ -1,20 +1,21 @@
-.my-projects-container {
+.my-epics-container {
     padding: 1rem;
   }
   
-  .my-projects-title {
+  .my-epics-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    color:blueviolet;
   }
   
-  .my-projects-grid {
+  .my-epics-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .project-card {
+  .epics-card {
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #1f2937;
@@ -22,35 +23,35 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     border: 1px solid #374151; 
   }
-  .project-header {
+  .epics-header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
   
-  .project-icon {
+  .epics-icon {
     font-size: 1.5rem;
   }
   
-  .project-name {
+  .epics-name {
     color: #f39c12;
     font-size: 1.25rem;
     font-weight: 600;
   }
   
-  .project-description {
+  .epics-description {
     color: #d1d5db; 
     font-style: italic;
     margin-bottom: 0.5rem;
   }
   
-  .project-details {
+  .epics-details {
     font-size: 0.875rem; 
     color: #9ca3af; 
   }
   
-  .project-details p {
+  .epics-details p {
     margin: 0.25rem 0;
   }
   

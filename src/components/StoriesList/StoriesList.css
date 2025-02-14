@@ -1,56 +1,54 @@
-.my-projects-container {
+.my-stories-container {
     padding: 1rem;
   }
   
-  .my-projects-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .my-projects-grid {
+  .my-stories-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
     gap: 1rem;
   }
   
-  .project-card {
+  .story-card {
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #1f2937;
     color: #f3f4f6; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    border: 1px solid #374151; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); / 
   }
-  .project-header {
+  
+  .story-header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
   
-  .project-icon {
+  .story-icon {
     font-size: 1.5rem;
   }
   
-  .project-name {
-    color: #f39c12;
+  .story-name {
+    color: aqua;
     font-size: 1.25rem;
     font-weight: 600;
   }
   
-  .project-description {
-    color: #d1d5db; 
+  .story-description {
     font-style: italic;
+    color: whitesmoke; 
     margin-bottom: 0.5rem;
   }
   
-  .project-details {
+  .story-details {
     font-size: 0.875rem; 
-    color: #9ca3af; 
+    color: whitesmoke;
   }
   
-  .project-details p {
+  .story-details p {
     margin: 0.25rem 0;
+  }
+
+  .stories-title{
+    color: green;
   }
   

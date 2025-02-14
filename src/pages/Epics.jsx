@@ -1,32 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar/Navbar.jsx'
+import EpicsList from '../components/EpicsList/EpicsList.jsx'
+
 
 
 function Epics() {
 
-  const [epics, setEpics] = useState([])
-
-  useEffect(() => {
-    fetch('https://lamansysfaketaskmanagerapi.onrender.com/api/projects')
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      setProjects(data);
-    
-    })
-    .catch((err) => {
-      console.log(err.message)
-    })
-  }, [])
-
 
   return (
     <div className='my-epics'>
-        <Navbar title="MY EPICS"/>
-        <div>
-          
-        </div>
-
+        <Navbar title="ÉPICAS"/>
+        <EpicsList/>
     </div>
   )
 }

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './ProjectList.css'
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [index, setIndex] = useState(0)
 
   const API_URL = 'https://lamansysfaketaskmanagerapi.onrender.com/api'
 
@@ -20,7 +22,7 @@ const ProjectList = () => {
             auth: token,
           }
         });
-        setProjects(response.data);
+        setProjects(response.data.data);
         setLoading(false);
       } catch (err) {
         setError('Hubo un error al obtener los proyectos');
@@ -29,7 +31,9 @@ const ProjectList = () => {
     };
 
     fetchProjects();
+    
   }, []); // Se ejecuta solo una vez cuando el componente se monta
+
 
   if (loading) {
     return <div>Cargando proyectos...</div>;
@@ -39,14 +43,20 @@ const ProjectList = () => {
     return <div>{error}</div>;
   }
 
+
+
   return (
-    <div className="projects-container">
-      {projects.data.length > 0 ? (
-        projects.data.map((project) => (
-          <div className="project-card" key={project._id}>
+
+    <div className="my-projects-container">
+    <div className="my-projects-grid">
+      {projects.length > 0 ? (
+        projects.map((project, index) => (
+          
+          <div className="project-card" key={project._id}> 
+            
             <div className="project-header">
               <span className="project-icon">{project.icon}</span>
-              <h2 className="project-name">{project.name}</h2>
+              <Link to={`/my-projects/${project._id}`}><h2 className='project-name'>{project.name}</h2></Link>
             </div>
             <p className="project-description">{project.description}</p>
             <p><strong>ID del dueño:</strong> {project.owner}</p>
@@ -55,20 +65,26 @@ const ProjectList = () => {
             {project.members.length > 0 ? (
               <ul className="members-list">
                 {project.members.map((member, index) => (
-                  <li key={index}>{member}</li>
+                  <li key={index}>{member}</li> 
                 ))}
               </ul>
             ) : (
-              <p>No members found</p>
+              <p>No se encontraron miembros.</p>
             )}
+
+            
+            
           </div>
+          
         ))
+        
       ) : (
         <p>No projects found</p>
+        
       )}
+      </div>
     </div>
-  );
-};
+  )
 
-
-export default ProjectList;
+}
+export default ProjectList
