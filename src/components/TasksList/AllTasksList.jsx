@@ -53,8 +53,9 @@ const tasksList = () => {
   console.log("TAREAS", tasks)
 
    return (
-       <>
+    <>
        <Navbar title="TAREAS"></Navbar>
+       <div className='contenedor'>
        <div className="my-tasks-container">
          <div className="my-tasks-grid">
            {tasks.map((task) => (
@@ -74,6 +75,7 @@ const tasksList = () => {
              </div>
            ))}
          </div>
+       </div>
        </div>
        </>
      );

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './ProjectList.css'
+import styles from './styles.module.css'
+import BackButton from '../BackButton/BackButton';
+import Navbar from '../Navbar/Navbar';
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [index, setIndex] = useState(0)
 
   const API_URL = 'https://lamansysfaketaskmanagerapi.onrender.com/api'
 
@@ -29,7 +30,7 @@ const ProjectList = () => {
         setLoading(false);
       }
     };
-
+    
     fetchProjects();
     
   }, []); // Se ejecuta solo una vez cuando el componente se monta
@@ -43,27 +44,28 @@ const ProjectList = () => {
     return <div>{error}</div>;
   }
 
-
-
   return (
 
-    <div className="my-projects-container">
-    <div className="my-projects-grid">
+    <>
+      <Navbar title="MIS PROYECTOS"/>
+    <div className={styles.myProjectsContainer}>
+    
+    <div className={styles.myProjectsGrid}>
       {projects.length > 0 ? (
         projects.map((project, index) => (
           
-          <div className="project-card" key={project._id}> 
+          <div className={styles.projectCard} key={project._id}> 
             
-            <div className="project-header">
-              <span className="project-icon">{project.icon}</span>
-              <Link to={`/my-projects/${project._id}`}><h2 className='project-name'>{project.name}</h2></Link>
+            <div className={styles.projectHeader}>
+              <span className={styles.projectIcon}>{project.icon}</span>
+              <Link to={`/my-projects/${project._id}`}><h2 className={styles.projectName}>{project.name}</h2></Link>
             </div>
-            <p className="project-description">{project.description}</p>
+            <p className={styles.projectDescription}>{project.description}</p>
             <p><strong>ID del dueño:</strong> {project.owner}</p>
             <p><strong>ID del proyecto </strong> {project._id}</p>
             <h3>Miembros:</h3>
             {project.members.length > 0 ? (
-              <ul className="members-list">
+              <ul className={styles.memberList}>
                 {project.members.map((member, index) => (
                   <li key={index}>{member}</li> 
                 ))}
@@ -84,6 +86,7 @@ const ProjectList = () => {
       )}
       </div>
     </div>
+    </>
   )
 
 }

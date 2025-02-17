@@ -53,7 +53,7 @@ const tasksList = () => {
   console.log("TAREAS", tasks)
 
   return (
-    <>
+    <div className='contenedor'>
     <Navbar title="TAREAS"></Navbar>
     <div className="my-tasks-container">
       <div className="my-tasks-grid">
@@ -72,7 +72,7 @@ const tasksList = () => {
         ))}
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

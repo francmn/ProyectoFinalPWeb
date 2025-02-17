@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #121212;
-  color: #f1f1f1;
   box-sizing: border-box;
 }
 
@@ -11,7 +9,6 @@ a {
 }
 
 .navbar {
-  background-color: #1c1c1e;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -25,6 +22,12 @@ a {
   z-index: 1000;
   gap: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #1c1c1e; 
+  color:whitesmoke;
+}
+
+.navbar-title{
+  padding-left: 8px;
 }
 
 
@@ -35,10 +38,15 @@ a {
   font-style: italic;
   font-variant: small-caps;
 }
-.navbar .hamburguer-icon {
+.navbar  {
   font-size: 1.5rem;
   color: #ffffff;
   cursor: pointer;
+
+}
+
+.hamburguer-icon{
+  color:#ffffff;
 }
 
 .hamburguer-icon:hover {

@@ -1,27 +1,42 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai";
 import { Sidebar } from "../Sidebar/Sidebar";
-import { IconContext } from "react-icons";
 import "./Navbar.css";
+import BackButton from "../BackButton/BackButton";
+import { useLocation } from "react-router-dom";
 
-export const Navbar = ({ title }) => {
-  const [sidebar, setSidebar] = useState(false); // Estado del Sidebar
-
+export const Navbar = ({ title = "HOME" }) => {
+  const [sidebar, setSidebar] = useState(false);
   // Alternar Sidebar
-  const toggleSidebar = () => setSidebar(!sidebar);
+  const toggleSidebar = () => setSidebar(!sidebar); 
 
+  const location = useLocation()
+
+
+  
   return (
-    <IconContext.Provider value={{ color: "whitesmoke" }}>
-      <div className="navbar">
-        <div onClick={toggleSidebar}>
+   
+    <div className="navbar">
+    { location.pathname === '/' || location.pathname === '/home' || location.pathname === '/settings' || location.pathname === '/my-projects' || location.pathname === '/my-stories' ? (
+        <>
+          <div onClick={toggleSidebar}></div>
+        
+            <div className="navbar-title">
+               <h1>{title}</h1>
+            </div>
+       
+          <Sidebar sidebar={sidebar} closeSidebar={toggleSidebar} />
+        </>
+      
+      ) : (
+        <>
+        <BackButton/>
+        <div className="navbar-title"> 
+               <h1>{title}</h1>
         </div>
-        <div className="navbar-title">
-          <h1>{title}</h1>
-        </div>
-      </div>
-      <Sidebar sidebar={sidebar} closeSidebar={toggleSidebar} />
-    </IconContext.Provider>
+        </>
+      )
+    }
+    </div>
   );
 };
 

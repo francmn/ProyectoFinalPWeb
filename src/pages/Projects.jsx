@@ -6,8 +6,8 @@ function Projects() {
 
 
   return (
-    <div className='my-projects'>
-        <Navbar title="MIS PROYECTOS"/>
+    <div className='contenedor'>
+        
         <div>
           <ProjectList/>
         </div>

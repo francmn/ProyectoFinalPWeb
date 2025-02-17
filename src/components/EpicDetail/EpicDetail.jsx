@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
-import './EpicDetail.css'
+import styles from './styles.module.css'
 
 function EpicDetail(){
 
@@ -50,22 +50,22 @@ if (error) {
 }
 
 return (
-  <div>
+  <div className='contenedor'>
   
     <Navbar title={epics.name}/>
 
-    <div className='epic-detail-container'>    
-    <h1 className='epic-detail-header'>DETALLE DE LA ÉPICA</h1>
-    <div className='epic-detail-content'>
-    <h2 ><strong className='epic-detail-content field'>Nombre del proyecto:</strong> {epics.name}</h2>
-    <p ><strong className='epic-detail-content field'>Ícono:</strong> {epics.icon}</p>
-    <p ><strong className='epic-detail-content field'>ID de la épica:</strong> {epics._id}</p>
-    <p ><strong className='epic-detail-content field'>Id del proyecto:</strong> {epics.project}</p>
+    <div className={styles.epicContainer}>    
+    <h1 className={styles.epicHeader}>DETALLE DE LA ÉPICA</h1>
+    <div className={styles.epicContent}>
+    <p ><strong className={styles.epicContentField}>Nombre del proyecto:</strong> {epics.name}</p>
+    <p ><strong className={styles.epicContentField}>Ícono:</strong> {epics.icon}</p>
+    <p ><strong className={styles.epicContentField}>ID de la épica:</strong> {epics._id}</p>
+    <p ><strong className={styles.epicContentField}>Id del proyecto:</strong> {epics.project}</p>
     </div>
     </div>
 
-    <div className='epic-detail-container'>
-    <Link to={`/my-projects/${projectId}/${epicId}/stories`}><h1 className='story-bttn'>Ver Historias</h1></Link>
+    <div className={styles.epicContainer}>
+    <Link to={`/my-projects/${projectId}/${epicId}/stories`}><h1 className={styles.storyBttn}>Ver Historias</h1></Link>
 
     </div>
 

@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
-import './ProjectDetail.css'
+import styles from './styles.module.css'
 
 function ProjectDetail(){
 
@@ -47,23 +47,23 @@ if (error) {
 }
 
 return (
-  <div>
+  <div className='contenedor'>
   
-    <div className='project-title'><Navbar title={projects.data.name}/></div>
+    <div className={styles.projectTitle}><Navbar title={projects.data.name}/></div>
 
-    <div className='project-detail-container'>    
-    <h1 className='project-detail-header'>DETALLES DEL PROYECTO</h1>
-    <div className='project-detail-content'>
-    <h2><strong className='project-detail-content field'>Nombre del proyecto:</strong> {projects.data.name}</h2>
-    <p><strong className='project-detail-content field'>Ícono:</strong> {projects.data.icon}</p>
-    <p><strong className='project-detail-content field'>Descripción:</strong> {projects.data.description}</p>
-    <p><strong className='project-detail-content field'>ID del Proyecto:</strong> {projects.data._id}</p>
-    <p><strong className='project-detail-content field'>Propietario:</strong> {projects.data.owner}</p>
+    <div className={styles.projectDetailContainer}>    
+    <h1 className={styles.projectDetailHeader}>DETALLES DEL PROYECTO</h1>
+    <div className={styles.projectDetailContent}>
+    <p><strong className={styles.projectDetailContentField}>Nombre del proyecto:</strong> {projects.data.name}</p>
+    <p><strong className={styles.projectDetailContentField}>Ícono:</strong> {projects.data.icon}</p>
+    <p><strong className={styles.projectDetailContentField}>Descripción:</strong> {projects.data.description}</p>
+    <p><strong className={styles.projectDetailContentField}>ID del Proyecto:</strong> {projects.data._id}</p>
+    <p><strong className={styles.projectDetailContentField}>Propietario:</strong> {projects.data.owner}</p>
     </div>
     </div>
 
-    <div className='project-detail-container'>
-    <div ><Link to={`/my-projects/${projectId}/epics`}><h1 className='epic-bttn'>Ver Épicas</h1></Link></div>
+    <div className={styles.projectDetailContainer}>
+    <div ><Link to={`/my-projects/${projectId}/epics`}><h1 className={styles.epicBttn}>Ver Épicas</h1></Link></div>
 
     </div>
 

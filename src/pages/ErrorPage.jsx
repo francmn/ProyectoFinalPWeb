@@ -5,7 +5,7 @@ export default function ErrorPage() {
   console.error(error);
 
   return (
-    <div id="error-page">
+    <div className="contenedor" id="error-page">
       <h1>Ups!</h1>
       <p>Un error inexperado ha ocurrido.</p>
       <p>

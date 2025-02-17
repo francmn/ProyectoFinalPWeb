@@ -49,14 +49,14 @@ function StoryDetail() {
   }
 
   return (
-    <div>
+    <div className='contenedor'>
       <Navbar title={story.name} />
 
       <div className='story-detail-container'>
       <div className='story-detail-card'>
         <h1 className='story-detail-header'>DETALLE DE LA HISTORIA</h1>
         <div className='story-detail-content'>
-          <h2 className='story-detail-content field'>Nombre de la historia: {story.name}</h2>
+          <p className='story-detail-content field'><strong>Nombre de la historia: </strong>{story.name}</p>
           <p className='story-detail-content field'><strong>ID de la historia:</strong> {story._id}</p>
           <p className='story-detail-content field'><strong>Status:</strong> {story.status}</p>
           <p className='story-detail-content field'><strong>Puntos:</strong> {story.points}</p>
@@ -66,7 +66,7 @@ function StoryDetail() {
 
       <div className='story-detail-container'>
       <div className='story-detail-card'>
-        <Link to={`/my-projects/${projectId}/${epicId}/${storyId}/tasks`}><h1 className='story-bttn'>Ver Tareas</h1></Link>
+        <Link to={`/my-projects/${projectId}/${epicId}/${storyId}/tasks`}><h1 className='task-bttn'>Ver Tareas</h1></Link>
         </div>
       </div>
     </div>

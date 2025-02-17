@@ -1,4 +1,4 @@
-.epic-detail-container {
+.epicContainer {
     max-width: 800px;
     margin: 40px auto;
     background-color: #1e1e1e;
@@ -10,67 +10,55 @@
     background-color: #1c1c1e;
   }
   
-  .epic-detail-title{
+  .epicTitle{
     color:blueviolet;
   }
-  .epic-detail-header {
+  .epicHeader {
     text-align: center;
     margin-bottom: 30px;
     color:blueviolet;
 
   }
   
-  .epic-detail-header h1 {
+  .epicHeader h1 {
     font-size: 2.5rem;
     color: #00d4ff;
     margin-bottom: 10px;
   }
   
-  .epic-detail-header p {
+  .epicHeader p {
     font-size: 1.2rem;
     color: #f39c12;
   }
   
-  .epic-detail-content {
+  .epicContent {
     line-height: 1.6;
   }
   
-  .epic-detail-content .field {
+  .epicContentField{
     margin-bottom: 20px;
     color: blueviolet;
   }
   
-  .epic-detail-content .field-label {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #00d4ff;
-    margin-bottom: 5px;
-    display: block;
-  }
   
-  .epic-detail-content .field-value {
-    font-size: 1.1rem;
-    color: #e0e0e0;
-  }
-  
-  .epic-owner {
+  .epicOwner {
     display: flex;
     align-items: center;
     margin-top: 20px;
   }
   
-  .epic-owner .owner-icon {
+  .epicOwner .ownerIcon {
     font-size: 2rem;
     color: #f39c12;
     margin-right: 10px;
   }
   
-  .epic-owner .owner-name {
+  .epicOwner .ownerName {
     font-size: 1.3rem;
     color: #fff;
   }
 
-  .story-bttn{
+  .storyBttn{
     display: flex;
     color: aqua;
     justify-content: center;

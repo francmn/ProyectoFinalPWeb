@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import styles from './styles.module.css'
 import { Link } from 'react-router-dom';
 import { AiOutlineUser } from 'react-icons/ai';
 
@@ -10,7 +10,7 @@ function Footer() {
 
 
   return (
-    <div className='footer'>
+    <div className={styles.footer}>
 
     <Link to="/settings">
     

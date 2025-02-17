@@ -19,14 +19,15 @@ const authService = {
         localStorage.setItem("username", response.data.user.username)
         localStorage.setItem("name", response.data.user.name.first)
         localStorage.setItem("surname", response.data.user.name.last)
-
-    
-
+     
       }
 
-      // Retorna toda la respuesta de la API (normalmente contiene el token y otros datos del usuario)
+      // Retorna toda la respuesta de la API (token y otros datos del usuario)
       return response.data;
-    } catch (error) {
+    } 
+    
+    
+    catch (error) {
       throw new Error(error.response?.data?.message || "Error al iniciar sesión");
     }
   },

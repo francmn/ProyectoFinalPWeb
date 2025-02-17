@@ -1,0 +1,11 @@
+.logoutButton {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  align-items: center; 
+  background: none;
+  border-style: solid;
+  width: 124px;
+}

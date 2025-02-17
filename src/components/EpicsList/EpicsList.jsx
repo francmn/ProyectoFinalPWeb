@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './EpicsList.css'
+import styles from './styles.module.css'
 import { Link } from 'react-router-dom';
 
 const EpicsList = () => {
@@ -50,19 +50,19 @@ const EpicsList = () => {
   console.log("Epicas", epics)
 
   return (
-
-    <div className="my-epics-container">
-    <div className="my-epics-grid">
+   <div className="contenedor">
+    <div className={styles.myEpicsContainer}>
+    <div className={styles.myEpicsGrid}>
           {epics.length > 0 ? (
             epics.map((epic) => (
                 
-              <div className="epics-card"> 
+              <div className={styles.epicsCard}> 
               
-             <div className='my-epics-title'>  <Link to={`/my-projects/${projectId}/${epic._id}`}><p><strong></strong> {epic.icon}{epic.name}</p></Link></div>
+              <Link to={`/my-projects/${projectId}/${epic._id}`}><div className={styles.myEpicsTitle}>   {epic.icon}{epic.name}</div></Link>
                
-              <p className="epics-description">{epic.description}</p>
+              <p className={styles.epicsDescription}>{epic.description}</p>
                 
-              <p className='epics-project'><strong>ID del proyecto: </strong>{epic.project}</p>
+              <p className={styles.epicsProject}><strong>ID del proyecto: </strong>{epic.project}</p>
                 
               </div>
             ))
@@ -71,6 +71,7 @@ const EpicsList = () => {
             
           )}
           </div>
+        </div>
         </div>
       );
 };

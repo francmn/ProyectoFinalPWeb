@@ -2,34 +2,56 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Login from "./components/Login/Login.jsx";
-import Dashboard from "./pages/Dashboard/Dashboard.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 import ProtectedRoute from "./services/ProtectedRoute.jsx";
-import Settings from "./pages/Settings/Settings.jsx"
+import Settings from "./pages/Settings.jsx"
 import Projects from "./pages/Projects.jsx"
 import ProjectDetail from "./components/ProjectDetail/ProjectDetail.jsx";
 import Stories from "./pages/Stories.jsx"
 import StoriesList from "./components/StoriesList/StoriesList.jsx";
 import Epics from "./pages/Epics.jsx";
 import EpicDetail from "./components/EpicDetail/EpicDetail.jsx";
-import "./index.css"
 import authService from "./services/authService.jsx";
 import StoryDetail from "./components/StoryDetail/StoryDetail.jsx";
 import AllTasksList from "./components/TasksList/AllTasksList.jsx"
 import TasksList from "./components/TasksList/TasksList.jsx"
 import TasksDetail from "./components/TaskDetail/TaskDetail.jsx"
+import ThemeContext from "./services/ThemeContext.jsx";
+import { useState } from "react";
+import './styles.css'
 
 
 const App = () => {
 
-  const isAuthenticated = authService.isAuthenticated === "true";
+  const isAuthenticated = authService.isAuthenticated === "true"
+  
+  const [theme, setTheme] = useState("light");
+    
+  const handleThemeChange = () => {
+      
+      setTheme(() => {
+        return theme === "dark" ? "light" : "dark";
+      });
 
+      localStorage.setItem("theme", theme)
+
+    }
   return (
+    <main className={`App ${theme}`}>
     <Router>
       <Routes>
         {/* Rutas Públicas */}
-        <Route path="/login" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login />} />
 
         {/* Rutas Protegidas */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/home"
           element={
@@ -42,7 +64,9 @@ const App = () => {
           path="/settings"
           element={
             <ProtectedRoute>
+            <ThemeContext.Provider  value={{theme, handleThemeChange}}>
               <Settings />
+              </ThemeContext.Provider>
             </ProtectedRoute>
           }
         />
@@ -147,6 +171,7 @@ const App = () => {
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
+    </main>
   );
 };
 

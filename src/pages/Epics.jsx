@@ -8,7 +8,7 @@ function Epics() {
 
 
   return (
-    <div className='my-epics'>
+    <div className='contenedor'>
         <Navbar title="ÉPICAS"/>
         <EpicsList/>
     </div>

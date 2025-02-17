@@ -1,0 +1,46 @@
+body{
+  min-height: 100vh;
+}
+
+.projectDetailContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #1c1c1e; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 100hv;
+  }
+  
+  .epicBttn{
+    display: flex;
+    color:blueviolet;
+    justify-content: center;
+  }
+  .projectDetailHeader {
+    text-align: center;
+    margin-bottom: 30px;
+    color:orange;
+
+  }
+  
+  .projectDetailHeader h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .projectDetailHeader p {
+    font-size: 1.2rem;
+    color: #f39c12;
+  }
+  
+  .projectDetailContent {
+    line-height: 1.6;
+  }
+  
+  .projectDetailContentField {
+    margin-bottom: 20px;
+    color:orange;
+  }

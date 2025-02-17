@@ -11,7 +11,7 @@
   .story-card {
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: #1f2937;
+    background-color: #1c1c1e; 
     color: #f3f4f6; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); / 
   }
