@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './tasksList.css'
 import { Link, useParams } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
 import { FaCheck } from "react-icons/fa";
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
+import { IoAdd } from "react-icons/io5";
+import PopUpForm from '../PopUpForm/PopUpForm';
+import DeletePopUp from '../DeletePopUp/DeletePopUp';
 
 
 const tasksList = () => {
@@ -14,11 +17,9 @@ const tasksList = () => {
 
   const API_URL = 'https://lamansysfaketaskmanagerapi.onrender.com/api'
 
+  const { storyId } = useParams()
   const { projectId } = useParams()
   const { epicId } = useParams()
-  const { storyId } = useParams()
-  const { taskId } = useParams()
-
 
   useEffect(() => {
     
@@ -43,7 +44,7 @@ const tasksList = () => {
   }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   if (loading) {
-    return <div>Cargando tareas...</div>;
+    return <div><LoadingPage name={"tareas"}></LoadingPage></div>;
   }
 
   if (error) {
@@ -54,13 +55,17 @@ const tasksList = () => {
 
   return (
     <div className='contenedor'>
-    <Navbar title="TAREAS"></Navbar>
     <div className="my-tasks-container">
+    
       <div className="my-tasks-grid">
+
+
+      
+      <div className='tasks-card-add'> <PopUpForm storyId={storyId}></PopUpForm></div>
         {tasks.map((task) => (
           <div key={task._id} className="tasks-card">
             <div className="tasks-header">
-              <h2 className="tasks-name">{task.name}</h2>{task.done ? <FaCheck/> : "" }
+              {task.done ? <FaCheck/> : "" }<h2 className="tasks-name">{task.name}</h2>
             </div>
             <p className="tasks-description">{task.description}</p>
             <div className="tasks-details">
@@ -68,6 +73,7 @@ const tasksList = () => {
                 <strong>Story:</strong> {task.story}
               </p>
             </div>
+            <DeletePopUp taskId={task._id}></DeletePopUp>
           </div>
         ))}
       </div>

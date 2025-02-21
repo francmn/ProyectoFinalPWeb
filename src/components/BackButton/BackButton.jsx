@@ -9,7 +9,7 @@ function BackButton() {
     const navigate = useNavigate()
 
   return (
-    <IoMdArrowRoundBack size={42} className={styles.backBttn} onClick={() => navigate(-1)}/>
+    <IoMdArrowRoundBack size={32} className={styles.backBttn} onClick={() => navigate(-1)}/>
   )
 }
 

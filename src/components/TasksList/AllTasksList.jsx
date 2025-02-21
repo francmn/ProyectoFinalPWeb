@@ -4,6 +4,7 @@ import './tasksList.css'
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import { FaCheck } from "react-icons/fa";
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
 
 
 const tasksList = () => {
@@ -43,7 +44,7 @@ const tasksList = () => {
   }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   if (loading) {
-    return <div>Cargando tareas...</div>;
+    return <div><LoadingPage name={"tareas"}></LoadingPage></div>;
   }
 
   if (error) {

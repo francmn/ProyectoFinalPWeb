@@ -4,6 +4,8 @@ import { useState } from 'react';
 import './StoryDetail.css'
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
+import TasksList from '../TasksList/TasksList';
 
 function StoryDetail() {
 
@@ -41,7 +43,7 @@ function StoryDetail() {
   }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   if (loading) {
-    return <div>Cargando historia...</div>;
+    return <div><LoadingPage name={"historia"}></LoadingPage></div>;
   }
 
   if (error) {
@@ -64,10 +66,10 @@ function StoryDetail() {
       </div>
       </div>
 
-      <div className='story-detail-container'>
-      <div className='story-detail-card'>
-        <Link to={`/my-projects/${projectId}/${epicId}/${storyId}/tasks`}><h1 className='task-bttn'>Ver Tareas</h1></Link>
-        </div>
+      <div>
+      <h1 className='tasksList'>LISTA DE TAREAS </h1>
+      <TasksList/>
+      
       </div>
     </div>
   );

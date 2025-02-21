@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
 import styles from './styles.module.css'
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
+import EpicsList from '../EpicsList/EpicsList';
 
 function ProjectDetail(){
 
@@ -39,7 +41,7 @@ useEffect(() => {
 }, []); // Se ejecuta solo una vez cuando el componente se monta
 
 if (loading) {
-  return <div>Cargando proyectos...</div>;
+  return <div><LoadingPage name={'proyecto'}></LoadingPage></div>;
 }
 
 if (error) {
@@ -62,9 +64,9 @@ return (
     </div>
     </div>
 
-    <div className={styles.projectDetailContainer}>
-    <div ><Link to={`/my-projects/${projectId}/epics`}><h1 className={styles.epicBttn}>Ver Épicas</h1></Link></div>
-
+    <div>
+    <h1 className={styles.epicsList}>LISTA DE ÉPICAS</h1>
+    <EpicsList/>
     </div>
 
   </div>

@@ -36,9 +36,6 @@ export const Sidebar = ({ sidebar, closeSidebar }) => {
           <li className="nav-text">
             <Link to="/my-stories">MIS HISTORIAS</Link>
           </li>
-          <li className="nav-text">
-            <Link to="/settings">CONFIGURACIÓN</Link>
-          </li> 
           <li className='nav-text'>
           </li>
           </ul>

@@ -10,9 +10,8 @@ export const Navbar = ({ title = "HOME" }) => {
   const toggleSidebar = () => setSidebar(!sidebar); 
 
   const location = useLocation()
-
-
   
+
   return (
    
     <div className="navbar">

@@ -1,0 +1,43 @@
+.btnPrimary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btnPrimary:hover {
+    background-color: #0056b3;
+  }
+
+
+.btnSuccess {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btnSuccess:hover {
+    background-color: #218838;
+  }
+  
+  .btnSecondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btnSecondary:hover {
+    background-color: #5a6268;
+  }
+  

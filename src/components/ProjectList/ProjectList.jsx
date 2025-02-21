@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css'
-import BackButton from '../BackButton/BackButton';
 import Navbar from '../Navbar/Navbar';
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
@@ -29,6 +29,7 @@ const ProjectList = () => {
         setError('Hubo un error al obtener los proyectos');
         setLoading(false);
       }
+      
     };
     
     fetchProjects();
@@ -37,13 +38,17 @@ const ProjectList = () => {
 
 
   if (loading) {
-    return <div>Cargando proyectos...</div>;
+    return <div><LoadingPage name='proyectos'/></div>;
   }
 
   if (error) {
     return <div>{error}</div>;
   }
 
+  console.log('PROJECTS', projects)
+  console.log('NUM PROJECTS', projects.length)
+
+ 
   return (
 
     <>
@@ -52,13 +57,13 @@ const ProjectList = () => {
     
     <div className={styles.myProjectsGrid}>
       {projects.length > 0 ? (
-        projects.map((project, index) => (
-          
+        projects.map((project) => (
+          <Link to={`/my-projects/${project._id}`}>
           <div className={styles.projectCard} key={project._id}> 
-            
+          
             <div className={styles.projectHeader}>
               <span className={styles.projectIcon}>{project.icon}</span>
-              <Link to={`/my-projects/${project._id}`}><h2 className={styles.projectName}>{project.name}</h2></Link>
+              <h2 className={styles.projectName}>{project.name}</h2>
             </div>
             <p className={styles.projectDescription}>{project.description}</p>
             <p><strong>ID del dueño:</strong> {project.owner}</p>
@@ -74,9 +79,8 @@ const ProjectList = () => {
               <p>No se encontraron miembros.</p>
             )}
 
-            
-            
           </div>
+          </Link>
           
         ))
         

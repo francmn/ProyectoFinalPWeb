@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import styles from './styles.module.css'
 import { Link } from 'react-router-dom';
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
 
 const EpicsList = () => {
   const [epics, setEpics] = useState([]);
@@ -40,7 +41,7 @@ const EpicsList = () => {
   }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   if (loading) {
-    return <div>Cargando épicas...</div>;
+    return <div><LoadingPage name={"épicas"}></LoadingPage></div>;
   }
 
   if (error) {

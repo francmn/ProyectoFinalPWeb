@@ -3,6 +3,7 @@ import axios from 'axios';
 import './StoriesList.css'
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
 
 const StoriesList = () => {
   const [stories, setStories] = useState([]);
@@ -39,7 +40,7 @@ const StoriesList = () => {
   }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   if (loading) {
-    return <div>Cargando historias...</div>;
+    return <div><LoadingPage name={"historias"}></LoadingPage></div>;
   }
 
   if (error) {

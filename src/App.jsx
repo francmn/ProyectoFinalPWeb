@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Login from "./components/Login/Login.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import Home from "./pages/Home.jsx";
 import ProtectedRoute from "./services/ProtectedRoute.jsx";
 import Settings from "./pages/Settings.jsx"
 import Projects from "./pages/Projects.jsx"
@@ -15,9 +15,9 @@ import authService from "./services/authService.jsx";
 import StoryDetail from "./components/StoryDetail/StoryDetail.jsx";
 import AllTasksList from "./components/TasksList/AllTasksList.jsx"
 import TasksList from "./components/TasksList/TasksList.jsx"
-import TasksDetail from "./components/TaskDetail/TaskDetail.jsx"
+import TaskDetail from "./components/TaskDetail/TaskDetail.jsx"
 import ThemeContext from "./services/ThemeContext.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './styles.css'
 
 
@@ -27,15 +27,17 @@ const App = () => {
   
   const [theme, setTheme] = useState("light");
     
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+  }, []);
+
   const handleThemeChange = () => {
-      
-      setTheme(() => {
-        return theme === "dark" ? "light" : "dark";
-      });
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
 
-      localStorage.setItem("theme", theme)
-
-    }
   return (
     <main className={`App ${theme}`}>
     <Router>
@@ -48,7 +50,7 @@ const App = () => {
           path="/"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Home />
             </ProtectedRoute>
           }
         />
@@ -56,7 +58,7 @@ const App = () => {
           path="/home"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Home />
             </ProtectedRoute>
           }
         />
@@ -130,7 +132,7 @@ const App = () => {
           path="my-projects/:projectId/:epicId/:storyId/:taskId"
           element={
             <ProtectedRoute>
-              <TasksDetail />
+              <TaskDetail />
             </ProtectedRoute>
           }
         />

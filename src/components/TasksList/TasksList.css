@@ -13,9 +13,23 @@
     border-radius: 0.5rem;
     background-color: #1c1c1e; 
     color: #f3f4f6; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); / 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     
   }
-  
+
+
+  .tasks-card-add {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #1c1c1e;
+    color: greenyellow;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    cursor: pointer;
+    
+  }
+
   .tasks-header {
     display: flex;
     align-items: center;
@@ -28,7 +42,7 @@
   }
   
   .tasks-name {
-    color: orchid;
+    color: greenyellow;
     font-size: 1.25rem;
     font-weight: 600;
   }
@@ -51,3 +65,12 @@
   .tasks-title{
     color: green;
   }
+.btn-delete{
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}

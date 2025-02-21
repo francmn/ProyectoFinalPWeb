@@ -4,6 +4,7 @@ import { useState } from 'react';
 import './TaskDetail.css'
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
+import LoadingPage from '../../pages/LoadingPage/LoadingPage';
 
 function TasksDetail() {
 
@@ -12,7 +13,7 @@ function TasksDetail() {
 
   console.log("TASK ID: ", taskId);
 
-  const [tasks, settasks] = useState(null);
+  const [tasks, setTasks] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -23,12 +24,12 @@ function TasksDetail() {
 
     const fetchtasks = async () => {
       try {
-        const response = await axios.get(`${API_URL}/stories/${taskId}`, {
+        const response = await axios.get(`${API_URL}/tasks/${taskId}`, {
           headers: {
             auth: token,
           }
         });
-        settasks(response.data.data);
+        setTasks(response.data.data);
         setLoading(false);
       } catch (err) {
         setError('Hubo un error al obtener el detalle de la historia');
@@ -40,7 +41,7 @@ function TasksDetail() {
   }, []); // Se ejecuta solo una vez cuando el componente se monta
 
   if (loading) {
-    return <div>Cargando tareas...</div>;
+    return <div><LoadingPage name={"tarea"}></LoadingPage></div>;
   }
 
   if (error) {
@@ -60,13 +61,9 @@ function TasksDetail() {
           <p className='tasks-detail-content field'><strong>ID de la tarea:</strong> {tasks._id}</p>
           <p className='tasks-detail-content field'><strong>Status:</strong> {tasks.status}</p>
           <p className='tasks-detail-content field'><strong>Puntos:</strong> {tasks.points}</p>
+          
         </div>
       </div>
-      </div>
-
-      <div className='tasks-detail-container'>
-      <div className='tasks-detail-card'>
-        </div>
       </div>
     </div>
   );

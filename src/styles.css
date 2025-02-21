@@ -80,9 +80,10 @@ a {
     padding: 16px;
 
 }
+
  
 .content {
-    flex: 1;
+    padding-left: 8px;
 }
 
 

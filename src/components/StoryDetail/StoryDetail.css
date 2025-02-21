@@ -71,3 +71,11 @@
   color:orchid;
   justify-content: center;
 }
+
+.tasksList{
+    padding-left: 24px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight:bold;
+}
