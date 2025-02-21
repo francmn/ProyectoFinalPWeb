@@ -67,8 +67,11 @@ const tasksList = () => {
                <p className="tasks-description">{task.description}</p>
                <div className="tasks-details">
                  <p>
-                   <strong>Story:</strong> {task.story}
+                   <strong>Story ID:</strong> {task.story}
                  </p>
+                 <p>
+                <strong>Fecha de creación:</strong> {task.created}
+                </p>
                  <p>
                    
                  </p>

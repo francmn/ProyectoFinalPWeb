@@ -22,11 +22,14 @@ export default function PopUpForm({storyId}) {
           done: false,
         });
       
+    // Manejador de formularios dinámico
+    // Cada campo del formulario se actualiza automáticamente al cambiar su valor
+    // el operador spread (...) es común para copiar y actualizar estados sin modificar el original
     const handleChange = (e) => {
           
         const { name, value, type, checked } = e.target;
           setFormData({
-            ...formData,
+            ...formData, 
             [name]: type === "checkbox" ? checked : value,
           });
         };
@@ -96,6 +99,7 @@ export default function PopUpForm({storyId}) {
                 <input
                   type="text"
                   name="description"
+                  minLength={10}
                   value={formData.description}
                   onChange={handleChange}
                 />
@@ -112,21 +116,11 @@ export default function PopUpForm({storyId}) {
               <div className={styles.formGroup}>
                 <label>Fecha límite</label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   name="dueDate"
                   value={formData.dueDate}
                   onChange={handleChange}
                 />
-              </div>
-              <div className={styles.formGroup}>
-                <input
-                  type="checkbox"
-                  id="done"
-                  name="done"
-                  checked={formData.done}
-                  onChange={handleChange}
-                />
-                <label htmlFor="done">Realizada</label>
               </div>
               <div className="button-group">
                 <button type="submit" className={styles.btnSuccess}>

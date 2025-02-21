@@ -55,10 +55,11 @@ function DeletePopUp({taskId}) {
              Eliminar
          </button>
       {isOpen && (
-                <div>
-                 <h1>¿Desea eliminar esta tarea?</h1>
+                <div className={styles.modalOverlay}>
+                <div className={styles.modal}>
+                 <h1 className={styles.title}>¿Desea eliminar esta tarea?</h1>
 
-                    <div className="button-group">
+                    <div className={styles.bttnGroup}>
                     <button type="submit" className={styles.btnSuccess} onClick={handleSubmit}>
                       Si
                     </button>
@@ -66,7 +67,7 @@ function DeletePopUp({taskId}) {
                       Cerrar
                     </button>
                      </div>
-      
+                  </div>
 
                 </div>
                 )}

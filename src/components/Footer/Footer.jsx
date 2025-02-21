@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { AiOutlineUser } from 'react-icons/ai';
 
 function Footer() {
+  
   const username = localStorage.getItem("username");
   const name = localStorage.getItem("name");
   const surname = localStorage.getItem("surname")
-
 
   return (
     <div className={styles.footer}>

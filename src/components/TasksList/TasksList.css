@@ -17,6 +17,12 @@
      
   }
 
+  .tasks-bttns{
+    display: flex;
+    justify-content: left;
+    gap: 4px;
+
+  }
 
   .tasks-card-add {
     padding: 1rem;

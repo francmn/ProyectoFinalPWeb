@@ -7,6 +7,7 @@ import LoadingPage from '../../pages/LoadingPage/LoadingPage';
 import { IoAdd } from "react-icons/io5";
 import PopUpForm from '../PopUpForm/PopUpForm';
 import DeletePopUp from '../DeletePopUp/DeletePopUp';
+import CheckButton from '../CheckButton/CheckButton';
 
 
 const tasksList = () => {
@@ -70,10 +71,16 @@ const tasksList = () => {
             <p className="tasks-description">{task.description}</p>
             <div className="tasks-details">
               <p>
-                <strong>Story:</strong> {task.story}
+                <strong>Story ID:</strong> {task.story}
+              </p>
+              <p>
+                <strong>Fecha de creación:</strong> {task.created}
               </p>
             </div>
+            <div className='tasks-bttns'>
+            <CheckButton taskId={task._id}></CheckButton>
             <DeletePopUp taskId={task._id}></DeletePopUp>
+            </div>
           </div>
         ))}
       </div>

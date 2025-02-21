@@ -28,6 +28,7 @@ const Login = () => {
      
     } catch (err) {
       setError(err.message); // Guarda el mensaje de error en el estado
+      alert(error)
     } finally {
       setLoading(false); // Detiene el spinner
     }
@@ -45,6 +46,7 @@ const Login = () => {
               type="email"
               id="email"
               placeholder=""
+              minLength={4}
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -56,6 +58,7 @@ const Login = () => {
               type="text"
               id="username"
               placeholder=""
+              minLength={4}
               autoComplete="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -67,6 +70,7 @@ const Login = () => {
               type="password"
               id="password"
               placeholder=""
+              minLength={4}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
